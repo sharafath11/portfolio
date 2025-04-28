@@ -34,7 +34,7 @@ export default function Projects() {
       title: "Chat Application",
       description:
         "This chat application is built using the MERN stack (MongoDB, Express, React, Node.js) and Socket.IO for real-time communication. The app allows users to engage in live chat sessions, with features like user authentication, persistent message storage, and responsive design.",
-      image: "/chat-application.jpg",
+      image: "/chat.png",
       tags: ["MERN Stack", "Socket.IO", "Tailwind CSS"],
       liveUrl: "",  
       githubUrl: "https://github.com/sharafath11/chatApp",
@@ -43,7 +43,7 @@ export default function Projects() {
       title: "Today's Todo",
       description:
         "Today's Todo is a simple to-do application built with Node.js, Express, MongoDB, React, and TypeScript. It allows users to add, edit, delete, and view tasks, with a modern, responsive UI styled using Tailwind CSS. The app supports basic CRUD operations for managing daily tasks efficiently.",
-      image: "/todo-logo.png",
+      image: "/todo.png",
       tags: ["Node.js", "Express", "MongoDB", "React", "TypeScript", "Tailwind CSS"],
       liveUrl: "", 
       githubUrl: "https://github.com/sharafath11/Today-s-Todo-",
