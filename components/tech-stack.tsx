@@ -24,6 +24,7 @@ import {
 import { DiScrum } from 'react-icons/di';
 import { GiBrain } from 'react-icons/gi';
 import { BsFiletypeJson } from 'react-icons/bs'
+
 export default function TechStack() {
   const [activeTab, setActiveTab] = useState("frontend")
 
@@ -36,7 +37,6 @@ export default function TechStack() {
       { name: "Redux", icon: <SiRedux className="text-purple-600" />, description: "State management library" },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" />, description: "Utility-first CSS framework" },
       { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" />, description: "Popular CSS framework" },
-     
     ],
     backend: [
       { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, description: "JavaScript runtime (V8 engine)" },
@@ -58,7 +58,6 @@ export default function TechStack() {
       { name: "DSA", icon: <GiBrain className="text-purple-500" />, description: "Data Structures & Algorithms" },
     ],
   };
-  
 
   const container = {
     hidden: { opacity: 0 },
@@ -84,7 +83,7 @@ export default function TechStack() {
           <p className="mt-4 text-muted-foreground">The technologies and tools I use to bring ideas to life.</p>
         </div>
 
-        <Tabs defaultValue="frontend" className="w-full max-w-4xl mx-auto" onValueChange={setActiveTab}>
+        <Tabs defaultValue="frontend" className="w-full max-w-5xl mx-auto" onValueChange={setActiveTab}>
           <TabsList className="grid w-full grid-cols-3 mb-12">
             <TabsTrigger value="frontend">Frontend</TabsTrigger>
             <TabsTrigger value="backend">Backend</TabsTrigger>
@@ -97,17 +96,17 @@ export default function TechStack() {
                 variants={container}
                 initial="hidden"
                 animate={activeTab === category ? "show" : "hidden"}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
               >
                 {techs.map((tech, index) => (
                   <motion.div key={index} variants={item}>
-                    <Card className="overflow-hidden border border-muted hover:border-primary/50 transition-all duration-300 h-full">
+                    <Card className="overflow-hidden border border-muted hover:shadow-lg hover:scale-105 transition-all duration-300 h-full">
                       <CardContent className="p-6 flex flex-col items-center text-center">
-                        <div className="w-16 h-16 flex items-center justify-center text-3xl bg-muted rounded-full mb-4">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center text-2xl sm:text-3xl bg-muted rounded-full mb-4">
                           {tech.icon}
                         </div>
-                        <h3 className="text-xl font-semibold mb-2">{tech.name}</h3>
-                        <p className="text-sm text-muted-foreground">{tech.description}</p>
+                        <h3 className="text-lg sm:text-xl font-semibold mb-2">{tech.name}</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{tech.description}</p>
                       </CardContent>
                     </Card>
                   </motion.div>

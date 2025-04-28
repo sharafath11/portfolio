@@ -1,3 +1,4 @@
+import { Toaster } from 'sonner';
 import type React from "react";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -19,7 +20,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/web-icon.png" sizes="any" />
-        {/* You can add more meta tags if you want */}
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
@@ -27,6 +27,8 @@ export default function RootLayout({
             <Navigation />
             <main className="flex-1">{children}</main>
             <Footer />
+           
+            <Toaster />
           </div>
         </ThemeProvider>
       </body>

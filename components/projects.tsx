@@ -18,7 +18,7 @@ export default function Projects() {
         "The E-Learning Platform is a web app for students, mentors, and admins. Users can enroll in courses, attend live classes, join theory and practical sessions, and use an online compiler. Mentors create and manage courses, while admins oversee content and users. Features include quizzes, progress tracking, chat, and real-time coding in live sessions. \n\n**Repository Architecture**: The repository for this platform is structured into multiple folders to separate concerns and enhance scalability. The backend is built with **Node.js** and **Express**, while the frontend uses **React** and **Socket.IO**. The architecture follows a modular approach: \n- **Backend**: Includes models, controllers, and routes for handling authentication, user data, courses, sessions, quizzes, etc. \n- **Frontend**: Contains components for user interfaces, live session management, and quizzes. \n- **Database**: Uses **MongoDB** for storing user data, courses, quizzes, and session information. The app is organized to allow easy scaling and maintenance.",
       image: "/LV.png",
       tags: ["Node.js", "MongoDB", "React", "Socket.IO", "EJS"],
-      liveUrl: "Coming Soon",  
+      liveUrl: "",  
       githubUrl: "https://github.com/sharafath11/Learn-Vista",
     },
     {
@@ -27,7 +27,7 @@ export default function Projects() {
         "This e-commerce web application, built using Node.js, MongoDB, EJS, and JWT, offers a seamless shopping experience. Key features include cart management, wishlist functionality, Google authentication, OTP verification, and secure online payments via Razorpay. The platform supports order returns, wallet integration, and review & rating options for products.",
       image: "/E-commerce.png",
       tags: ["Node.js", "MongoDB", "EJS", "JWT", "Razorpay"],
-      liveUrl: "Coming Soon", 
+      liveUrl: "https://shop-st.ddns.net/", 
       githubUrl: "https://github.com/sharafath11/ShoeCommerce",
     },
     {
@@ -36,21 +36,19 @@ export default function Projects() {
         "This chat application is built using the MERN stack (MongoDB, Express, React, Node.js) and Socket.IO for real-time communication. The app allows users to engage in live chat sessions, with features like user authentication, persistent message storage, and responsive design.",
       image: "/chat-application.jpg",
       tags: ["MERN Stack", "Socket.IO", "Tailwind CSS"],
-      liveUrl: "Coming Soon",  
+      liveUrl: "",  
       githubUrl: "https://github.com/sharafath11/chatApp",
     },
-   
     {
       title: "Today's Todo",
       description:
         "Today's Todo is a simple to-do application built with Node.js, Express, MongoDB, React, and TypeScript. It allows users to add, edit, delete, and view tasks, with a modern, responsive UI styled using Tailwind CSS. The app supports basic CRUD operations for managing daily tasks efficiently.",
       image: "/todo-logo.png",
       tags: ["Node.js", "Express", "MongoDB", "React", "TypeScript", "Tailwind CSS"],
-      liveUrl: "Coming Soon", 
+      liveUrl: "", 
       githubUrl: "https://github.com/sharafath11/Today-s-Todo-",
     },
-  ];
-  
+  ]
 
   return (
     <section id="projects" className="py-24">
@@ -75,7 +73,7 @@ export default function Projects() {
               onMouseLeave={() => setHoveredIndex(null)}
               className="relative"
             >
-              <Card className="h-full overflow-hidden border border-muted bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
+              <Card className="h-full flex flex-col overflow-hidden border border-muted bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
                 <div className="relative overflow-hidden aspect-video">
                   <Image
                     src={project.image || "/placeholder.svg"}
@@ -93,7 +91,7 @@ export default function Projects() {
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge key={tagIndex} variant="secondary">
@@ -102,17 +100,17 @@ export default function Projects() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="flex justify-between">
+                <CardFooter className="flex justify-between items-center mt-auto">
                   <Button variant="ghost" size="sm" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
                       <Github className="mr-2 h-4 w-4" />
                       Code
                     </a>
                   </Button>
                   <Button variant="default" size="sm" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
+                      {project.liveUrl?"Demo":"Live Demo comming soon"}
                     </a>
                   </Button>
                 </CardFooter>

@@ -13,7 +13,8 @@ export default function Experience() {
       period: "2024 - 2025",
       description:
         "Completed an intensive full-stack development training focused on real-world application building. Developed scalable web applications, structured repositories efficiently, and strengthened debugging and maintenance skills.",
-        achievements: [
+      achievements: [
+          "Participated in a 30-week program, attending weekly study sessions and reviews with industry experts who have 1 to 4+ years of experience, gaining insights from their real-world experience.",
           "Designed and built scalable full-stack applications following best practices",
           "Structured project repositories for better maintainability and scalability",
           "Implemented robust user authentication and authorization systems using JWT",

@@ -14,29 +14,30 @@ export default function Footer() {
               href="/"
               className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 inline-block"
             >
-              DEV<span className="text-primary">FOLIO</span>
+              SHARAFATH<span className="text-primary"> PORTFOLIO</span>
             </Link>
             <p className="text-muted-foreground mt-2 max-w-md">
               A passionate MERN Stack Developer focused on creating elegant, efficient, and user-friendly web
               applications.
             </p>
             <div className="flex gap-4 mt-6">
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://github.com/sharafath11" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://www.linkedin.com/in/sharafath-abi/" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="https://x.com/__st__________" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
-              </Link>
+              <Link href="mailto:abisharafath@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
+  <Mail className="h-5 w-5" />
+  <span className="sr-only">Email</span>
+</Link>
+
             </div>
           </div>
 
@@ -79,10 +80,10 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground">San Francisco, CA</li>
+              <li className="text-muted-foreground">olavanna,calicut,kerala</li>
               <li>
                 <Link
-                  href="mailto:hello@johnsmith.dev"
+                  href="mailto:abisharafath@gmail.com"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   hello@johnsmith.dev
@@ -90,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="tel:+15551234567" className="text-muted-foreground hover:text-foreground transition-colors">
-                  +1 (555) 123-4567
+                  +91 6282560928
                 </Link>
               </li>
             </ul>
@@ -98,7 +99,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">© {currentYear} John Smith. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {currentYear} Sharafath Abil Has. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy

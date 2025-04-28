@@ -1,75 +1,53 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, GitCommit, GitPullRequest, Star } from "lucide-react"
-import { useEffect, useState } from "react"
+import axios from "axios"
 
-// Define the types for GitHub data
-interface GitHubStats {
-  repositories: number
-  stars: number
-  contributions: number
-  pullRequests: number
-}
-
-type ContributionData = number[][] // Array of weeks with each day having a number of contributions
-
-// Define the component
 export default function GitHubActivity() {
-  // State to store GitHub data
-  const [githubStats, setGithubStats] = useState<GitHubStats>({
+  const [githubStats, setGithubStats] = useState({
     repositories: 0,
     stars: 0,
     contributions: 0,
     pullRequests: 0,
   })
-  const [contributionData, setContributionData] = useState<ContributionData>([])
+  const [contributionData, setContributionData] = useState([])
 
-  // Fetch GitHub data
   useEffect(() => {
-    const fetchGithubData = async () => {
+    // Fetch GitHub data
+    const fetchGitHubData = async () => {
       try {
-        // Fetch the user profile data
-        const res = await fetch("https://api.github.com/users/sharafath11")
-        const data = await res.json()
+        // Replace 'yourusername' with your actual GitHub username
+        const userResponse = await axios.get('https://api.github.com/users/sharafath11')
+        const reposResponse = await axios.get('https://api.github.com/users/sharafath11/repos')
+        const eventsResponse = await axios.get('https://api.github.com/users/sharafath11/events')
 
-        // Fetch user repositories data
-        const repoRes = await fetch(data.repos_url)
-        const repos = await repoRes.json()
-        const repoCount = repos.length
-
-        // Calculate stars and pull requests
-        const stars = repos.reduce((acc: number, repo: { stargazers_count: number }) => acc + repo.stargazers_count, 0)
-        const pullRequests = repos.reduce((acc: number, repo: { open_issues_count: number }) => acc + repo.open_issues_count, 0)
-
-        // Calculate contributions (this can be more precise)
-        const contributions = data.public_repos // Placeholder for actual contribution calculation
+        // Calculate your GitHub stats
+        const repositories = reposResponse.data.length
+        const stars = reposResponse.data.reduce((acc, repo) => acc + repo.stargazers_count, 0)
+        const pullRequests = eventsResponse.data.filter(event => event.type === "PullRequestEvent").length
+        const contributions = eventsResponse.data.filter(event => event.type === "PushEvent").length
 
         setGithubStats({
-          repositories: repoCount,
+          repositories,
           stars,
-          pullRequests,
           contributions,
+          pullRequests,
         })
 
-        // Fetch public events data (for contribution activity)
-        const contributionsRes = await fetch(
-          `https://api.github.com/users/sharafath11/events/public`
+        // Sample contribution data (simulating contributions over the past year)
+        const contributionData = Array.from({ length: 52 }, () =>
+          Array.from({ length: 7 }, () => Math.floor(Math.random() * 5)),
         )
-        const contributionsEvents = await contributionsRes.json()
-
-        // Process contribution events (simplified here as a placeholder logic)
-        const weeksData: ContributionData = Array.from({ length: 52 }, () =>
-          Array.from({ length: 7 }, () => Math.floor(Math.random() * 5)) // Random data for now
-        )
-        setContributionData(weeksData)
+        setContributionData(contributionData)
       } catch (error) {
         console.error("Error fetching GitHub data", error)
       }
     }
 
-    fetchGithubData()
+    fetchGitHubData()
   }, [])
 
   const container = {
@@ -88,15 +66,15 @@ export default function GitHubActivity() {
   }
 
   return (
-    <section id="github" className="py-24">
-      <div className="container px-4 md:px-6">
+    <section id="github" className="py-24 overflow-x-hidden">
+      <div className="container px-4 md:px-6 max-w-full">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">GitHub Activity</h2>
           <div className="mt-4 h-1 w-20 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mx-auto"></div>
           <p className="mt-4 text-muted-foreground">My open source contributions and coding activity.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {[
             { icon: <Github />, title: "Repositories", value: githubStats.repositories },
             { icon: <Star />, title: "Stars", value: githubStats.stars },
@@ -135,7 +113,7 @@ export default function GitHubActivity() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex gap-1"
+                className="flex gap-1 flex-wrap justify-center"
               >
                 {contributionData.map((week, weekIndex) => (
                   <div key={weekIndex} className="flex flex-col gap-1">
