@@ -107,12 +107,21 @@ export default function Projects() {
                       Code
                     </a>
                   </Button>
-                  <Button variant="default" size="sm" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      {project.liveUrl?"Demo":"Demo comming soon"}
-                    </a>
-                  </Button>
+                  <Button variant="default" size="sm" asChild disabled={!project.liveUrl}>
+  <a
+    href={project.liveUrl || "#"}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center"
+    onClick={(e) => {
+      if (!project.liveUrl) e.preventDefault(); 
+    }}
+  >
+    <ExternalLink className="mr-2 h-4 w-4" />
+    {project.liveUrl ? "Demo" : "Demo coming soon"}
+  </a>
+</Button>
+
                 </CardFooter>
               </Card>
             </motion.div>
