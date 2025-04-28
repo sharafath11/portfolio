@@ -86,7 +86,7 @@ export default function Footer() {
                   href="mailto:abisharafath@gmail.com"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  hello@johnsmith.dev
+                  abisharafath@gmail.com
                 </Link>
               </li>
               <li>

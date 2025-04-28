@@ -110,7 +110,7 @@ export default function Projects() {
                   <Button variant="default" size="sm" asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      {project.liveUrl?"Demo":"Live Demo comming soon"}
+                      {project.liveUrl?"Demo":"Demo comming soon"}
                     </a>
                   </Button>
                 </CardFooter>
