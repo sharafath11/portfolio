@@ -20,19 +20,29 @@ export default function Resume() {
               <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-500 to-cyan-500"></div>
               <CardHeader className="text-center">
                 <CardTitle className="text-3xl font-bold tracking-tighter">Resume</CardTitle>
-                <CardDescription>Download my resume to learn more about my experience and skills</CardDescription>
+                <CardDescription>View and download my resume to learn more about my experience and skills</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col items-center">
-                <div className="relative w-full max-w-md aspect-[3/4] mb-6 border border-muted rounded-md overflow-hidden">
-                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                    <FileText className="h-16 w-16 text-muted-foreground/50" />
-                  </div>
+                {/* Embed Resume PDF */}
+                <div className="relative w-full mb-6 border border-muted rounded-md overflow-hidden">
+                  <iframe
+                    src="/Sharafath Abil Has PP.pdf"
+                    width="100%"
+                    height="600px"
+                    frameBorder="0"
+                    title="Resume"
+                  ></iframe>
                 </div>
 
-                <Button size="lg" className="gap-2">
+                {/* Download Button using 'a' tag */}
+                <a
+                  href="/Sharafath Abil Has PP.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-6 py-3 text-white bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg"
+                >
                   <Download className="h-4 w-4" />
                   Download Resume (PDF)
-                </Button>
+                </a>
               </CardContent>
             </Card>
           </motion.div>
