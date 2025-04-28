@@ -8,45 +8,53 @@ import { Briefcase, Calendar } from "lucide-react"
 export default function Experience() {
   const experiences = [
     {
-      title: "Senior MERN Stack Developer",
-      company: "Tech Innovations Inc.",
-      period: "2021 - Present",
+      title: "Full Stack Developer Intern",
+      company: "Brototype Training Program (2024-2025)",
+      period: "2024 - 2025",
       description:
-        "Leading the development of enterprise web applications using the MERN stack. Architecting scalable solutions and mentoring junior developers.",
-      achievements: [
-        "Reduced application load time by 40% through code optimization",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Led a team of 5 developers to deliver projects on time and within budget",
-      ],
-      skills: ["React", "Node.js", "MongoDB", "AWS", "Docker"],
+        "Completed an intensive full-stack development training focused on real-world application building. Developed scalable web applications, structured repositories efficiently, and strengthened debugging and maintenance skills.",
+        achievements: [
+          "Designed and built scalable full-stack applications following best practices",
+          "Structured project repositories for better maintainability and scalability",
+          "Implemented robust user authentication and authorization systems using JWT",
+          "Debugged and resolved complex backend and frontend issues during development",
+          "Maintained code quality using Git version control and modular coding practices",
+          "Worked on RESTful API development, database schema design, and responsive UI building",
+          "Collaborated on GitHub with multiple contributors, ensuring smooth integration of new features",
+          "Reviewed and merged pull requests, improving code quality and reducing bugs in the project",
+          "Handled GitHub issues and tracked project progress with milestones and tasks",
+          "Contributed to open-source projects and private repositories, enhancing team collaboration and project workflows",
+          "Maintained consistent branching strategies and merge protocols to ensure high-quality code deployment",
+        ],
+      skills: [
+        "JavaScript", "React", "Next.js", "TypeScript", "Redux", "Tailwind CSS", "Bootstrap",
+        "Node.js", "Express.js", "MongoDB", "PostgreSQL", "Postman", "REST API", "Socket.io", 
+        "JWT", "Git", "Firebase", "Cloudinary", "Webpack", "DSA", "EJS"
+      ]
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2019 - 2021",
+      title: "Freelancer - MERN Stack Developer",
+      company: "Self-employed",
+      period: "2024 - Present",
       description:
-        "Developed and maintained multiple web applications for clients in various industries. Collaborated with designers and product managers to deliver high-quality products.",
+        "Developed custom web applications for clients using the MERN stack (MongoDB, Express.js, React, Node.js). Collaborated with clients to deliver high-quality and scalable solutions, focusing on user-friendly interfaces and performance optimization.",
       achievements: [
-        "Built a real-time dashboard that increased client productivity by 25%",
-        "Implemented authentication system with multi-factor authentication",
-        "Optimized database queries resulting in 30% faster response times",
+        "Built and deployed several full-stack applications for clients",
+        "Worked closely with clients to understand requirements and deliver tailored solutions",
+        "Implemented responsive UI designs and optimized user experience",
+        "Ensured data security and authentication using JWT and secure RESTful APIs",
+        "Maintained version control and project structure using Git",
+        "Provided ongoing support and troubleshooting for deployed applications"
       ],
-      skills: ["React", "Express", "MongoDB", "Redux", "Firebase"],
-    },
-    {
-      title: "Frontend Developer",
-      company: "WebCraft Agency",
-      period: "2018 - 2019",
-      description:
-        "Created responsive and interactive user interfaces for client websites and web applications. Worked closely with the design team to implement pixel-perfect designs.",
-      achievements: [
-        "Developed 15+ responsive websites for various clients",
-        "Implemented accessibility improvements across all projects",
-        "Created reusable component library reducing development time by 20%",
-      ],
-      skills: ["React", "JavaScript", "CSS", "HTML", "Webpack"],
-    },
-  ]
+      skills: [
+        "JavaScript", "React", "Next.js", "TypeScript", "Redux", "Tailwind CSS", "Bootstrap",
+        "Node.js", "Express.js", "MongoDB", "PostgreSQL", "Postman", "REST API", "Socket.io", 
+        "JWT", "Git", "Firebase", "Cloudinary", "Webpack", "DSA", "EJS"
+      ]
+    }
+  ];
+  
+  
 
   return (
     <section id="experience" className="py-24">

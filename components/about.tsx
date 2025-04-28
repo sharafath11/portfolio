@@ -17,11 +17,12 @@ export default function About() {
     "Redux",
     "REST API",
     "Tailwind CSS",
-    "Shad cn",
+    "shadcn/ui",
     "Git",
     "Firebase",
     "DSA"
-  ]
+  ];
+  
 
   const container = {
     hidden: { opacity: 0 },

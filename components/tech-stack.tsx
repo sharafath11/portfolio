@@ -4,36 +4,61 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+import { FaReact, FaNodeJs, FaJs, FaGitAlt, FaAws, FaBootstrap, FaDocker } from 'react-icons/fa';
+import { 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiRedux, 
+  SiTailwindcss, 
+  SiExpress, 
+  SiMongodb, 
+  SiPostgresql, 
+  SiPostman, 
+  SiFirebase, 
+  SiSocketdotio, 
+  SiJet,
+  SiWebpack,
+  SiCloudinary,
+  SiAmazon
+} from 'react-icons/si';
+import { DiScrum } from 'react-icons/di';
+import { GiBrain } from 'react-icons/gi';
+import { BsFiletypeJson } from 'react-icons/bs'
 export default function TechStack() {
   const [activeTab, setActiveTab] = useState("frontend")
 
   const technologies = {
     frontend: [
-      { name: "React", icon: "⚛️", description: "Component-based UI library" },
-      { name: "Next.js", icon: "▲", description: "React framework for production" },
-      { name: "TypeScript", icon: "TS", description: "Typed JavaScript" },
-      { name: "Redux", icon: "🔄", description: "State management" },
-      { name: "Tailwind CSS", icon: "🎨", description: "Utility-first CSS framework" },
-      { name: "Material UI", icon: "🧩", description: "React component library" },
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, description: "Versatile programming language" },
+      { name: "React", icon: <FaReact className="text-blue-600" />, description: "JavaScript library for building interactive UIs" },
+      { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" />, description: "React framework for server-side rendering" },
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, description: "Typed superset of JavaScript" },
+      { name: "Redux", icon: <SiRedux className="text-purple-600" />, description: "State management library" },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" />, description: "Utility-first CSS framework" },
+      { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" />, description: "Popular CSS framework" },
+     
     ],
     backend: [
-      { name: "Node.js", icon: "🟢", description: "JavaScript runtime" },
-      { name: "Express", icon: "🚂", description: "Web framework for Node.js" },
-      { name: "MongoDB", icon: "🍃", description: "NoSQL database" },
-      { name: "GraphQL", icon: "◼️", description: "API query language" },
-      { name: "REST API", icon: "🔄", description: "RESTful architecture" },
-      { name: "Socket.io", icon: "🔌", description: "Real-time communication" },
+      { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, description: "JavaScript runtime (V8 engine)" },
+      { name: "Express.js", icon: <SiExpress className="text-gray-600" />, description: "Minimal Node.js web framework" },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-600" />, description: "NoSQL document database" },
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" />, description: "Powerful relational database" },
+      { name: "Postman", icon: <SiPostman className="text-orange-600" />, description: "API testing platform" },
+      { name: "REST API", icon: <BsFiletypeJson className="text-gray-500" />, description: "Architectural style for APIs" },
+      { name: "Socket.io", icon: <SiSocketdotio className="text-black dark:text-white" />, description: "Real-time communication" },
+      { name: "JWT", icon: <SiJet className="text-pink-600" />, description: "Token-based authentication" },
     ],
     tools: [
-      { name: "Git", icon: "🔄", description: "Version control" },
-      { name: "Docker", icon: "🐳", description: "Containerization" },
-      { name: "AWS", icon: "☁️", description: "Cloud services" },
-      { name: "Firebase", icon: "🔥", description: "Backend as a service" },
-      { name: "Jest", icon: "🃏", description: "Testing framework" },
-      { name: "Webpack", icon: "📦", description: "Module bundler" },
+      { name: "Git", icon: <FaGitAlt className="text-orange-600" />, description: "Version control system" },
+      { name: "Docker", icon: <FaDocker className="text-blue-500" />, description: "Container platform" },
+      { name: "AWS", icon: <SiAmazon className="text-yellow-600" />, description: "Cloud computing services" },
+      { name: "Firebase", icon: <SiFirebase className="text-yellow-500" />, description: "Backend-as-a-Service" },
+      { name: "Cloudinary", icon: <SiCloudinary className="text-blue-400" />, description: "Image/cloud management" },
+      { name: "Webpack", icon: <SiWebpack className="text-blue-400" />, description: "JavaScript module bundler" },
+      { name: "DSA", icon: <GiBrain className="text-purple-500" />, description: "Data Structures & Algorithms" },
     ],
-  }
+  };
+  
 
   const container = {
     hidden: { opacity: 0 },

@@ -13,39 +13,44 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "E-Learning Platform",
+      description:
+        "The E-Learning Platform is a web app for students, mentors, and admins. Users can enroll in courses, attend live classes, join theory and practical sessions, and use an online compiler. Mentors create and manage courses, while admins oversee content and users. Features include quizzes, progress tracking, chat, and real-time coding in live sessions. \n\n**Repository Architecture**: The repository for this platform is structured into multiple folders to separate concerns and enhance scalability. The backend is built with **Node.js** and **Express**, while the frontend uses **React** and **Socket.IO**. The architecture follows a modular approach: \n- **Backend**: Includes models, controllers, and routes for handling authentication, user data, courses, sessions, quizzes, etc. \n- **Frontend**: Contains components for user interfaces, live session management, and quizzes. \n- **Database**: Uses **MongoDB** for storing user data, courses, quizzes, and session information. The app is organized to allow easy scaling and maintenance.",
+      image: "/LV.png",
+      tags: ["Node.js", "MongoDB", "React", "Socket.IO", "EJS"],
+      liveUrl: "Coming Soon",  
+      githubUrl: "https://github.com/sharafath11/Learn-Vista",
+    },
+    {
       title: "E-Commerce Platform",
       description:
-        "A full-stack e-commerce platform with product management, cart functionality, and payment integration.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["React", "Node.js", "MongoDB", "Express", "Redux"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "This e-commerce web application, built using Node.js, MongoDB, EJS, and JWT, offers a seamless shopping experience. Key features include cart management, wishlist functionality, Google authentication, OTP verification, and secure online payments via Razorpay. The platform supports order returns, wallet integration, and review & rating options for products.",
+      image: "/E-commerce.png",
+      tags: ["Node.js", "MongoDB", "EJS", "JWT", "Razorpay"],
+      liveUrl: "Coming Soon", 
+      githubUrl: "https://github.com/sharafath11/ShoeCommerce",
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates and team workspaces.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["React", "Firebase", "Material UI", "Redux"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: "Chat Application",
+      description:
+        "This chat application is built using the MERN stack (MongoDB, Express, React, Node.js) and Socket.IO for real-time communication. The app allows users to engage in live chat sessions, with features like user authentication, persistent message storage, and responsive design.",
+      image: "/chat-application.jpg",
+      tags: ["MERN Stack", "Socket.IO", "Tailwind CSS"],
+      liveUrl: "Coming Soon",  
+      githubUrl: "https://github.com/sharafath11/chatApp",
     },
+   
     {
-      title: "Social Media Dashboard",
-      description: "An analytics dashboard for social media managers with data visualization and reporting features.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: "Today's Todo",
+      description:
+        "Today's Todo is a simple to-do application built with Node.js, Express, MongoDB, React, and TypeScript. It allows users to add, edit, delete, and view tasks, with a modern, responsive UI styled using Tailwind CSS. The app supports basic CRUD operations for managing daily tasks efficiently.",
+      image: "/todo-logo.png",
+      tags: ["Node.js", "Express", "MongoDB", "React", "TypeScript", "Tailwind CSS"],
+      liveUrl: "Coming Soon", 
+      githubUrl: "https://github.com/sharafath11/Today-s-Todo-",
     },
-    {
-      title: "Real Estate Marketplace",
-      description: "A platform for property listings with advanced search, filtering, and user authentication.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["MERN Stack", "Google Maps API", "AWS S3"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-  ]
+  ];
+  
 
   return (
     <section id="projects" className="py-24">
@@ -118,7 +123,7 @@ export default function Projects() {
 
         <div className="mt-12 text-center">
           <Button variant="outline" size="lg" asChild>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/sharafath11?tab=repositories" target="_blank" rel="noopener noreferrer">
               View All Projects
             </a>
           </Button>

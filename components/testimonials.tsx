@@ -9,28 +9,38 @@ import { Quote } from "lucide-react"
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Product Manager at TechCorp",
-      image: "/placeholder.svg?height=100&width=100",
-      text: "Working with John was an absolute pleasure. His technical expertise and problem-solving skills helped us deliver our product ahead of schedule. I was particularly impressed with his ability to translate complex requirements into elegant solutions.",
+      name: "Najil",
+      role: "BCA Student",
+      image: "/najil.jpeg",
+      text: "Sharafath's approach to coding was clear and helped me finish the MERN stack project efficiently. Great to work with!",
     },
     {
-      name: "Michael Chen",
-      role: "CTO at StartupX",
+      name: "Pranv Shangar",
+      role: "Brocamp Reviewer",
       image: "/placeholder.svg?height=100&width=100",
-      text: "John is one of the most talented developers I've worked with. His deep understanding of the MERN stack allowed us to build a scalable platform that could handle our rapid growth. He's not just a coder, but a true problem solver.",
+      text: "Review on Sharafath's first project: It's well-organized and clean. A promising developer with great potential!",
+      project: "Project 1: MERN Stack E-commerce Platform",
     },
     {
-      name: "Emily Rodriguez",
-      role: "Design Lead at CreativeAgency",
+      name: "Subin Chaliyath",
+      role: "Brocamp Reviewer",
       image: "/placeholder.svg?height=100&width=100",
-      text: "I've collaborated with John on multiple projects, and his ability to bring designs to life is exceptional. He has a keen eye for detail and always ensures the final product matches the design vision while maintaining excellent performance.",
+      text: "Sharafath’s project showed a strong grasp of the MERN stack. His coding practices were solid and industry-standard.",
+      project: "Project 2: E-Learning Platform",
     },
     {
-      name: "David Kim",
-      role: "Founder at SaaS Platform",
+      name: "Muhammed Nihal",
+      role: "Freelance Client",
       image: "/placeholder.svg?height=100&width=100",
-      text: "John played a crucial role in building our MVP. His expertise in the MERN stack and his proactive approach to solving problems made him an invaluable asset to our team. I would not hesitate to work with him again.",
+      text: "Sharafath exceeded expectations on my web development project. His communication and delivery were top-notch.",
+      project: "Freelance Project: Custom Web Application Development",
+    },
+    {
+      name: "Siyadh",
+      role: "Freelance Client",
+      image: "/siyadh.jpeg",
+      text: "Sharafath's work on my e-commerce platform was excellent. His understanding of the MERN stack and user requirements was impressive.",
+      project: "Freelance Project: E-Commerce Platform Development",
     },
   ]
 
