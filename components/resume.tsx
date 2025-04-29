@@ -25,18 +25,19 @@ export default function Resume() {
               <CardContent className="flex flex-col items-center">
                 {/* Embed Resume PDF */}
                 <div className="relative w-full mb-6 border border-muted rounded-md overflow-hidden">
-                  <iframe
-                    src="/Sharafath Abil Has PP.pdf"
-                    width="100%"
-                    height="600px"
-                    frameBorder="0"
-                    title="Resume"
-                  ></iframe>
+                <iframe
+  src="/resume.pdf"
+  width="100%"
+  height="600px"
+  style={{ border: "none" }} 
+  title="Resume"
+/>
+
                 </div>
 
                 {/* Download Button using 'a' tag */}
                 <a
-                  href="/Sharafath Abil Has PP.pdf"
+                  href="/resume.pdf"
                   download
                   className="inline-flex items-center gap-2 px-6 py-3 text-white bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg"
                 >
