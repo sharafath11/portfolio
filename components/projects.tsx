@@ -13,21 +13,36 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "E-Learning Platform",
+      title: "LearnVista",
       description:
-        "The E-Learning Platform is a web app for students, mentors, and admins. Users can enroll in courses, attend live classes, join theory and practical sessions, and use an online compiler. Mentors create and manage courses, while admins oversee content and users. Features include quizzes, progress tracking, chat, and real-time coding in live sessions. \n\n**Repository Architecture**: The repository for this platform is structured into multiple folders to separate concerns and enhance scalability. The backend is built with **Node.js** and **Express**, while the frontend uses **React** and **Socket.IO**. The architecture follows a modular approach: \n- **Backend**: Includes models, controllers, and routes for handling authentication, user data, courses, sessions, quizzes, etc. \n- **Frontend**: Contains components for user interfaces, live session management, and quizzes. \n- **Database**: Uses **MongoDB** for storing user data, courses, quizzes, and session information. The app is organized to allow easy scaling and maintenance.",
+        "LearnVista is an AI-powered e-learning platform built with Next.js, TypeScript, and TailwindCSS. It blends modern course management, live streaming, and real-time interactivity with powerful AI tools.\n\nKey Features:\n- Authentication: Google OAuth + JWT\n- Courses & Lessons: Theory, practicals, MCQs with AI-based evaluation & feedback\n- AI Notes: Students see their original notes side-by-side with AI-enhanced notes that improve clarity and add insights\n- Daily Tasks: Personalized AI practice in speaking, writing & listening\n- Progress Tracking: Dashboard, achievements & digital certificates\n- Real-Time: Notifications & live mentor-led sessions via WebRTC + Socket.IO\n- AI Batman: 24/7 personal assistant for doubts, explanations & task guidance\n- PSC Questions: AI-generated practice questions\n- Donations: Stripe support for mentors\n\nTech Stack: Next.js (App Router), TypeScript, TailwindCSS, shadcn/ui, Node.js + Express, MongoDB Atlas, AWS S3, WebSockets, Stripe, Docker + Nginx (AWS EC2).",
       image: "/LV.png",
-      tags: ["Node.js", "MongoDB", "React", "Socket.IO", "EJS"],
-      liveUrl: "",  
-      githubUrl: "https://github.com/sharafath11/Learn-Vista",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Socket.IO",
+        "WebRTC",
+        "AWS",
+        "Stripe",
+        "Docker",
+        "Nginx",
+        "AI",
+      ],
+      liveUrl: "https://learnvista.sharafathabi.cloud/",
+      githubUrl: "https://github.com/sharafath11/LearnVista",
     },
+
     {
       title: "E-Commerce Platform",
       description:
         "This e-commerce web application, built using Node.js, MongoDB, EJS, and JWT, offers a seamless shopping experience. Key features include cart management, wishlist functionality, Google authentication, OTP verification, and secure online payments via Razorpay. The platform supports order returns, wallet integration, and review & rating options for products.",
       image: "/E-commerce.png",
       tags: ["Node.js", "MongoDB", "EJS", "JWT", "Razorpay"],
-      liveUrl: "https://shop-st.ddns.net/", 
+      liveUrl: "https://shop-st.ddns.net/",
       githubUrl: "https://github.com/sharafath11/ShoeCommerce",
     },
     {
@@ -36,7 +51,7 @@ export default function Projects() {
         "This chat application is built using the MERN stack (MongoDB, Express, React, Node.js) and Socket.IO for real-time communication. The app allows users to engage in live chat sessions, with features like user authentication, persistent message storage, and responsive design.",
       image: "/chat.png",
       tags: ["MERN Stack", "Socket.IO", "Tailwind CSS"],
-      liveUrl: "",  
+      liveUrl: "",
       githubUrl: "https://github.com/sharafath11/chatApp",
     },
     {
@@ -45,7 +60,7 @@ export default function Projects() {
         "Today's Todo is a simple to-do application built with Node.js, Express, MongoDB, React, and TypeScript. It allows users to add, edit, delete, and view tasks, with a modern, responsive UI styled using Tailwind CSS. The app supports basic CRUD operations for managing daily tasks efficiently.",
       image: "/todo.png",
       tags: ["Node.js", "Express", "MongoDB", "React", "TypeScript", "Tailwind CSS"],
-      liveUrl: "", 
+      liveUrl: "",
       githubUrl: "https://github.com/sharafath11/Today-s-Todo-",
     },
   ]
@@ -108,20 +123,19 @@ export default function Projects() {
                     </a>
                   </Button>
                   <Button variant="default" size="sm" asChild disabled={!project.liveUrl}>
-  <a
-    href={project.liveUrl || "#"}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center"
-    onClick={(e) => {
-      if (!project.liveUrl) e.preventDefault(); 
-    }}
-  >
-    <ExternalLink className="mr-2 h-4 w-4" />
-    {project.liveUrl ? "Demo" : "Demo coming soon"}
-  </a>
-</Button>
-
+                    <a
+                      href={project.liveUrl || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center"
+                      onClick={(e) => {
+                        if (!project.liveUrl) e.preventDefault();
+                      }}
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      {project.liveUrl ? "Demo" : "Demo coming soon"}
+                    </a>
+                  </Button>
                 </CardFooter>
               </Card>
             </motion.div>

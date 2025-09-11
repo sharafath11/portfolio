@@ -21,7 +21,6 @@ import {
   SiCloudinary,
   SiAmazon
 } from 'react-icons/si';
-import { DiScrum } from 'react-icons/di';
 import { GiBrain } from 'react-icons/gi';
 import { BsFiletypeJson } from 'react-icons/bs'
 

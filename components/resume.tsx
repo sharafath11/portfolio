@@ -35,7 +35,6 @@ export default function Resume() {
 
                 </div>
 
-                {/* Download Button using 'a' tag */}
                 <a
                   href="/resume.pdf"
                   download
