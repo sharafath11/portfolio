@@ -1,119 +1,72 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { FaReact, FaNodeJs, FaJs, FaGitAlt, FaAws, FaBootstrap, FaDocker } from 'react-icons/fa';
-import { 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiRedux, 
-  SiTailwindcss, 
-  SiExpress, 
-  SiMongodb, 
-  SiPostgresql, 
-  SiPostman, 
-  SiFirebase, 
-  SiSocketdotio, 
-  SiJet,
-  SiWebpack,
-  SiCloudinary,
-  SiAmazon
-} from 'react-icons/si';
-import { GiBrain } from 'react-icons/gi';
-import { BsFiletypeJson } from 'react-icons/bs'
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { useRef } from "react"
 
 export default function TechStack() {
-  const [activeTab, setActiveTab] = useState("frontend")
+  const container = useRef<HTMLDivElement>(null)
 
-  const technologies = {
-    frontend: [
-      { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, description: "Versatile programming language" },
-      { name: "React", icon: <FaReact className="text-blue-600" />, description: "JavaScript library for building interactive UIs" },
-      { name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" />, description: "React framework for server-side rendering" },
-      { name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, description: "Typed superset of JavaScript" },
-      { name: "Redux", icon: <SiRedux className="text-purple-600" />, description: "State management library" },
-      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" />, description: "Utility-first CSS framework" },
-      { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" />, description: "Popular CSS framework" },
-    ],
-    backend: [
-      { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, description: "JavaScript runtime (V8 engine)" },
-      { name: "Express.js", icon: <SiExpress className="text-gray-600" />, description: "Minimal Node.js web framework" },
-      { name: "MongoDB", icon: <SiMongodb className="text-green-600" />, description: "NoSQL document database" },
-      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" />, description: "Powerful relational database" },
-      { name: "Postman", icon: <SiPostman className="text-orange-600" />, description: "API testing platform" },
-      { name: "REST API", icon: <BsFiletypeJson className="text-gray-500" />, description: "Architectural style for APIs" },
-      { name: "Socket.io", icon: <SiSocketdotio className="text-black dark:text-white" />, description: "Real-time communication" },
-      { name: "JWT", icon: <SiJet className="text-pink-600" />, description: "Token-based authentication" },
-    ],
-    tools: [
-      { name: "Git", icon: <FaGitAlt className="text-orange-600" />, description: "Version control system" },
-      { name: "Docker", icon: <FaDocker className="text-blue-500" />, description: "Container platform" },
-      { name: "AWS", icon: <SiAmazon className="text-yellow-600" />, description: "Cloud computing services" },
-      { name: "Firebase", icon: <SiFirebase className="text-yellow-500" />, description: "Backend-as-a-Service" },
-      { name: "Cloudinary", icon: <SiCloudinary className="text-blue-400" />, description: "Image/cloud management" },
-      { name: "Webpack", icon: <SiWebpack className="text-blue-400" />, description: "JavaScript module bundler" },
-      { name: "DSA", icon: <GiBrain className="text-purple-500" />, description: "Data Structures & Algorithms" },
-    ],
-  };
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+  const stackGroups = [
+    {
+      title: "Core & Frontend",
+      skills: ["Next.js 15 (App Router)", "React 19", "TypeScript", "Tailwind CSS", "GSAP (ScrollTrigger)", "Redux Toolkit"]
     },
-  }
+    {
+      title: "Systems & Backend",
+      skills: ["Node.js", "Express.js", "WebRTC signaling", "Socket.IO (WebSockets)", "Redis Caching", "JWT / OAuth"]
+    },
+    {
+      title: "Infra & DevOps",
+      skills: ["AWS (EC2, S3, RDS)", "Docker Containerization", "Nginx Reverse Proxy", "GitHub Actions CI/CD", "PostgreSQL / MongoDB"]
+    },
+    {
+        title: "Engineering Practices",
+        skills: ["System Architecture", "RBAC Security", "Real-Time Scalability", "RESTful Design", "Performance Auditing"]
+    }
+  ]
 
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  }
+  useGSAP(() => {
+    gsap.from(".stack-reveal", {
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top 80%",
+      },
+      opacity: 0,
+      y: 20,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: "power2.out"
+    })
+  }, { scope: container })
 
   return (
-    <section id="tech-stack" className="py-24 bg-muted/30">
-      <div className="container px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Tech Stack</h2>
-          <div className="mt-4 h-1 w-20 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mx-auto"></div>
-          <p className="mt-4 text-muted-foreground">The technologies and tools I use to bring ideas to life.</p>
+    <section id="tech-stack" ref={container} className="py-24 px-6 md:px-12 lg:px-24 bg-muted/10">
+      <div className="max-w-7xl mx-auto">
+        <div className="stack-reveal mb-16">
+          <h2 className="text-sm font-mono uppercase tracking-[0.3em] text-muted-foreground mb-4">Core Competencies</h2>
+          <p className="text-3xl font-display font-medium">Technical Specialization</p>
         </div>
 
-        <Tabs defaultValue="frontend" className="w-full max-w-5xl mx-auto" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-3 mb-12">
-            <TabsTrigger value="frontend">Frontend</TabsTrigger>
-            <TabsTrigger value="backend">Backend</TabsTrigger>
-            <TabsTrigger value="tools">Tools & DevOps</TabsTrigger>
-          </TabsList>
-
-          {Object.entries(technologies).map(([category, techs]) => (
-            <TabsContent key={category} value={category} className="mt-0">
-              <motion.div
-                variants={container}
-                initial="hidden"
-                animate={activeTab === category ? "show" : "hidden"}
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-              >
-                {techs.map((tech, index) => (
-                  <motion.div key={index} variants={item}>
-                    <Card className="overflow-hidden border border-muted hover:shadow-lg hover:scale-105 transition-all duration-300 h-full">
-                      <CardContent className="p-6 flex flex-col items-center text-center">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center text-2xl sm:text-3xl bg-muted rounded-full mb-4">
-                          {tech.icon}
-                        </div>
-                        <h3 className="text-lg sm:text-xl font-semibold mb-2">{tech.name}</h3>
-                        <p className="text-xs sm:text-sm text-muted-foreground">{tech.description}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          {stackGroups.map((group, i) => (
+            <div key={i} className="stack-reveal space-y-6">
+              <h3 className="text-xs uppercase tracking-[0.2em] text-foreground font-mono pb-2 border-b border-border/50">
+                {group.title}
+              </h3>
+              <ul className="space-y-4">
+                {group.skills.map((skill) => (
+                  <li key={skill} className="group flex items-center gap-3">
+                    <span className="w-1 h-1 bg-muted-foreground/30 group-hover:bg-foreground transition-colors" />
+                    <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors font-sans">
+                        {skill}
+                    </span>
+                  </li>
                 ))}
-              </motion.div>
-            </TabsContent>
+              </ul>
+            </div>
           ))}
-        </Tabs>
+        </div>
       </div>
     </section>
   )

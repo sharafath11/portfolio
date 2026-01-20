@@ -1,113 +1,28 @@
 "use client"
+
 import Link from "next/link"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t bg-muted/30 backdrop-blur-sm">
-      <div className="container px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <Link
-              href="/"
-              className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 inline-block"
-            >
-              SHARAFATH<span className="text-primary"> PORTFOLIO</span>
-            </Link>
-            <p className="text-muted-foreground mt-2 max-w-md">
-              A passionate MERN Stack Developer focused on creating elegant, efficient, and user-friendly web
-              applications.
+    <footer className="py-12 px-6 md:px-12 lg:px-24 border-t border-border/50">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="flex flex-col gap-2">
+            <span className="text-sm font-mono uppercase tracking-widest font-medium">SHARAFATH ABIL .dev</span>
+            <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">
+                Built for production • {currentYear}
             </p>
-            <div className="flex gap-4 mt-6">
-              <Link href="https://github.com/sharafath11" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-              <Link href="https://www.linkedin.com/in/sharafath-abi/" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="https://x.com/__st__________" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="mailto:abisharafath@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
-  <Mail className="h-5 w-5" />
-  <span className="sr-only">Email</span>
-</Link>
-
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#hero" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="#experience" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Experience
-                </Link>
-              </li>
-              <li>
-                <Link href="#blog" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li className="text-muted-foreground">olavanna,calicut,kerala</li>
-              <li>
-                <Link
-                  href="mailto:abisharafath@gmail.com"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  abisharafath@gmail.com
-                </Link>
-              </li>
-              <li>
-                <Link href="tel:+15551234567" className="text-muted-foreground hover:text-foreground transition-colors">
-                  +91 6282560928
-                </Link>
-              </li>
-            </ul>
-          </div>
+        </div>
+        
+        <div className="flex gap-8">
+            <a href="https://github.com/sharafath11" target="_blank" className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/sharafath-abi/" target="_blank" className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+            <a href="mailto:abisharafath@gmail.com" className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors">Email</a>
         </div>
 
-        <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">© {currentYear} Sharafath Abil Has. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Service
-            </Link>
-          </div>
+        <div className="text-[10px] font-mono text-muted-foreground/50 uppercase tracking-widest">
+            Kerala, India • 11.25° N, 75.78° E
         </div>
       </div>
     </footer>

@@ -3,12 +3,29 @@ import type React from "react";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
+import { LenisProvider } from "@/components/lenis-provider";
 import type { Metadata } from "next";
+import { Inter, Outfit } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "SHARAFATH ST",
-  description: "Portfolio showcasing my skills as a MERN Stack Developer",
+  title: "SHARAFATH ABIL HAS PP | MERN & Next.js Developer",
+  description: "I build production-grade web systems — not demos. Engineering-first developer specializing in MERN, Next.js, and scalable architectures.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -17,19 +34,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/web-icon.png" sizes="any" />
-      </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${outfit.variable}`}>
+      <body className="min-h-screen bg-background font-sans antialiased text-foreground selection:bg-foreground selection:text-background">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div className="relative flex min-h-screen flex-col">
-            <Navigation />
-            <main className="flex-1">{children}</main>
-            <Footer />
-           
-            <Toaster />
-          </div>
+          <LenisProvider>
+            <div className="relative flex min-h-screen flex-col">
+              <Navigation />
+              <main className="flex-1">{children}</main>
+            </div>
+          </LenisProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
