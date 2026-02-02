@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex gap-8">
             <a href="https://github.com/sharafath11" target="_blank" className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors">GitHub</a>
             <a href="https://www.linkedin.com/in/sharafath-abi/" target="_blank" className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="mailto:abisharafath@gmail.com" className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors">Email</a>
+            <a href="mailto:sharafathabi@gmail.com" className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors">Email</a>
         </div>
 
         <div className="text-[10px] font-mono text-muted-foreground/50 uppercase tracking-widest">

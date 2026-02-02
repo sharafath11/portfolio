@@ -84,8 +84,8 @@ export default function Contact() {
             <div className="space-y-8">
               <div className="group">
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Primary channel</p>
-                <a href="mailto:abisharafath@gmail.com" className="text-xl md:text-2xl font-display hover:text-muted-foreground transition-colors flex items-center gap-2">
-                  abisharafath@gmail.com <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <a href="mailto:sharafathabi@gmail.com" className="text-xl md:text-2xl font-display hover:text-muted-foreground transition-colors flex items-center gap-2">
+                  sharafathabi@gmail.com <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
               <div className="group">
